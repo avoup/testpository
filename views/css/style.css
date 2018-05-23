@@ -1,0 +1,261 @@
+/* @keyframes swing {
+  0%  {transform: rotate(1deg);}
+  100%{transform: rotate(-1deg);}
+} */
+@keyframes fall {
+  7%   {top: -45vh;}
+  12%  {top: -50vh;}
+  25%  {top: -50vh;}
+  40%  {top: -5px;}
+  80%  {top: -200vh;}
+}
+@keyframes rise {
+  0%   {top: 0;}
+  40%  {top: 0;}
+  80%  {top: -200vh;}
+  100% {top: -200vh;}
+}
+@keyframes A-anim {
+  from{transform: rotate(95deg)}
+  to  {transform: rotate(135deg)}
+}
+@keyframes B-anim {
+  from{transform: rotate(59deg)}
+  to  {transform: rotate(15deg)}
+}
+@keyframes C-anim {
+  0%   {transform: rotate(22deg)}
+  25%  {transform: rotate(22deg)}
+  100% {transform: rotate(115deg)}
+}
+@keyframes A-anim-gravity {
+  0%  {transform: rotate(60deg)}
+  10% {transform: rotate(55deg)}
+  100%{transform: rotate(60deg)}
+}
+@keyframes B-anim-gravity {
+  0%  {transform: rotate(-35deg)}
+  40% {transform: rotate(-20deg)}
+  60% {transform: rotate(-40deg)}
+  100%{transform: rotate(-40deg)}
+}
+@keyframes C-anim-gravity {
+  0%  {transform: rotate(-45deg)}
+  40% {transform: rotate(-30deg)}
+  60% {transform: rotate(-100deg)}
+  100%{transform: rotate(-100deg)}
+}
+@keyframes A1-anim-gravity {
+  0%  {transform: rotate(30deg)}
+  10% {transform: rotate(28deg)}
+  100%{transform: rotate(30deg)}
+}
+@keyframes B1-anim-gravity {
+  0%  {transform: rotate(-30deg)}
+  40% {transform: rotate(-20deg)}
+  60% {transform: rotate(-35deg)}
+  100%{transform: rotate(-35deg)}
+}
+@keyframes C1-anim-gravity {
+  0%  {transform: rotate(-15deg)}
+  40% {transform: rotate(-0deg)}
+  60% {transform: rotate(-90deg)}
+  100%{transform: rotate(-90deg)}
+}
+.animation_rise {
+  animation: rise 4s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+.animation_fall {
+  animation: fall 4s ease-in-out;
+  animation-delay: 1s;
+}
+.opening {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.curtain {
+  position: absolute;
+  background-color: #303030;
+  width: 100vw;
+  height: 100vh;
+  top:0;
+  left: 0;
+}
+.fall {
+  z-index: 500;
+  position: absolute;
+  top: -200vh;
+  margin-left: calc(50% - 50px);
+}
+/* .swing {
+  position: absolute;
+  display: inline-block;
+  transform-origin: 50% 0%;
+  animation-name: swing;
+  animation-duration: 2s;
+  animation-iteration-count: 5;
+  animation-direction: alternate;
+} */
+.web {
+  margin-left: 49px;
+  background-color: #f9f9f9;
+  height: calc(100vh - 102px);
+  width: 0.5px;
+}
+.spider-body {
+  width: 40px;
+  height: 50px;
+  transform: translate(75%, 0);
+  border-radius: 50px;
+  background-color: #b20000;
+}
+.spider-body:before {
+  content:"";
+  background-color: #b20000;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  left: 5px;
+  position: absolute;
+  bottom: -15px;
+  z-index: -99;
+  }
+.spider-body:after {
+  content: '';
+  position: absolute;
+  bottom: -25px;
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0px -5px 0 3px #b20000;
+}
+.arm {
+  background-color: #b20000;
+  border-radius: 50px;
+  height: 50px;
+  width: 5px;
+  position: absolute;
+  transform-origin: top center;
+  }
+.left {
+  margin-left: 38px;
+}
+.right {
+  transform: rotateY(180deg);
+  margin-left: 62px;
+}
+.A {
+  height: 20px;
+}
+.B {
+  top: 18px;
+  height: 40px;
+}
+.C {
+  top: 38px;
+}
+
+
+
+.A:nth-child(1) {
+  bottom: -20px;
+  transform: rotate(105deg);
+}
+  .A:nth-child(1) .B {
+    transform: rotate(60deg);
+  }
+  .A:nth-child(1) .C {
+    transform: rotate(25deg);
+  }
+.A:nth-child(2) {
+  bottom: -22px;
+  transform: rotate(90deg);
+}
+  .A:nth-child(2) .B {
+    transform: rotate(35deg);
+  }
+  .A:nth-child(2) .C {
+    transform: rotate(45deg);
+  }
+.A:nth-child(3) {
+  bottom: -24px;
+  transform: rotate(60deg);
+  animation: A-anim-gravity 0.35s ease-in-out;
+  animation-delay: 1.35s;
+
+}
+  .A:nth-child(3) .B {
+    transform: rotate(-35deg);
+    animation: B-anim-gravity 1s ease-in-out;
+    animation-delay: 2.1s;
+    animation-fill-mode: forwards;
+
+  }
+  .A:nth-child(3) .C {
+    transform: rotate(-45deg);
+    animation: C-anim-gravity 1s ease-in-out;
+    animation-delay: 2.1s;
+    animation-fill-mode: forwards;
+
+  }
+.A:nth-child(4) {
+  bottom: -26px;
+  transform: rotate(30deg);
+  animation: A1-anim-gravity 0.5s ease-in-out;
+  animation-delay: 1.35s;
+}
+  .A:nth-child(4) .B {
+    transform: rotate(-30deg);
+    animation: B1-anim-gravity 1s ease-in-out;
+    animation-delay: 2.1s;
+    animation-fill-mode: forwards;
+  }
+  .A:nth-child(4) .C {
+    transform: rotate(-15deg);
+    animation: C1-anim-gravity 1s ease-in-out;
+    animation-delay: 2.1s;
+    animation-fill-mode: forwards;
+  }
+
+.A_animation {
+  animation: A-anim 0.4s infinite ease-in-out;
+  animation-direction: alternate;
+}
+  .A_B_animation {
+    animation: B-anim 0.4s infinite ease-in-out;
+    animation-direction: alternate;
+    animation-delay: -0.2s;
+  }
+    .A_B_C_animation {
+      animation: C-anim 0.4s infinite ease-in-out;
+      animation-direction: alternate;
+      animation-delay: 0.4s;
+    }
+
+/* delays */
+.right .A:nth-child(1)    {animation-delay: 0.4s;}
+.right .A:nth-child(1) .B {animation-delay: 0.2s;}
+.right .A:nth-child(1) .C {animation-delay: 0.8s;}
+
+.right .A:nth-child(2)    {animation-delay: 0.6s;}
+.right .A:nth-child(2) .B {animation-delay: 0.4s;}
+.right .A:nth-child(2) .C {animation-delay: 1s;}
+
+.left .A:nth-child(2)    {animation-delay: 0.2s;}
+.left .A:nth-child(2) .B {animation-delay: 0s;}
+.left .A:nth-child(2) .C {animation-delay: 0.6s;}
+/* end delays */
+
+#logo {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../images/madSpider.jpg);
+  background-repeat: no-repeat;
+}
